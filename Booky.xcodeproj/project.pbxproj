@@ -3,19 +3,27 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E70D3C1026F27CE300A981B5 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70D3C0F26F27CE300A981B5 /* Book.swift */; };
+		E70D3C1226F27CEF00A981B5 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70D3C1126F27CEF00A981B5 /* Word.swift */; };
+		E70D3C1526F27E1E00A981B5 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = E70D3C1426F27E1E00A981B5 /* Realm */; };
+		E70D3C1726F27E1E00A981B5 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E70D3C1626F27E1E00A981B5 /* RealmSwift */; };
+		E70D3C1926F335FC00A981B5 /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70D3C1826F335FC00A981B5 /* WordCell.swift */; };
 		E7C0352D26EB4A1D00B136F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0352C26EB4A1D00B136F0 /* AppDelegate.swift */; };
 		E7C0352F26EB4A1D00B136F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0352E26EB4A1D00B136F0 /* SceneDelegate.swift */; };
-		E7C0353126EB4A1D00B136F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0353026EB4A1D00B136F0 /* ViewController.swift */; };
+		E7C0353126EB4A1D00B136F0 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0353026EB4A1D00B136F0 /* BookViewController.swift */; };
 		E7C0353426EB4A1D00B136F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7C0353226EB4A1D00B136F0 /* Main.storyboard */; };
-		E7C0353726EB4A1D00B136F0 /* Booky.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7C0353526EB4A1D00B136F0 /* Booky.xcdatamodeld */; };
 		E7C0353926EB4A1E00B136F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7C0353826EB4A1E00B136F0 /* Assets.xcassets */; };
 		E7C0353C26EB4A1E00B136F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7C0353A26EB4A1E00B136F0 /* LaunchScreen.storyboard */; };
 		E7C0354726EB4A1E00B136F0 /* BookyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0354626EB4A1E00B136F0 /* BookyTests.swift */; };
 		E7C0355226EB4A1E00B136F0 /* BookyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0355126EB4A1E00B136F0 /* BookyUITests.swift */; };
+		E7C0356326EB4C6F00B136F0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0356226EB4C6F00B136F0 /* Constants.swift */; };
+		E7C0356626EB4E5700B136F0 /* WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0356426EB4E5700B136F0 /* WordViewController.swift */; };
+		E7C0356726EB4E5700B136F0 /* WordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7C0356526EB4E5700B136F0 /* WordCell.xib */; };
+		E7C0356B26EB6CE400B136F0 /* SearchCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0356A26EB6CE400B136F0 /* SearchCollectionReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,12 +44,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E70D3C0F26F27CE300A981B5 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		E70D3C1126F27CEF00A981B5 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		E70D3C1826F335FC00A981B5 /* WordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WordCell.swift; path = Booky/Views/WordCell.swift; sourceTree = SOURCE_ROOT; };
 		E7C0352926EB4A1D00B136F0 /* Booky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Booky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7C0352C26EB4A1D00B136F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7C0352E26EB4A1D00B136F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E7C0353026EB4A1D00B136F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E7C0353026EB4A1D00B136F0 /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		E7C0353326EB4A1D00B136F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E7C0353626EB4A1D00B136F0 /* Booky.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Booky.xcdatamodel; sourceTree = "<group>"; };
 		E7C0353826EB4A1E00B136F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7C0353B26EB4A1E00B136F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7C0353D26EB4A1E00B136F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +61,10 @@
 		E7C0354D26EB4A1E00B136F0 /* BookyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7C0355126EB4A1E00B136F0 /* BookyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookyUITests.swift; sourceTree = "<group>"; };
 		E7C0355326EB4A1E00B136F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7C0356226EB4C6F00B136F0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E7C0356426EB4E5700B136F0 /* WordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewController.swift; sourceTree = "<group>"; };
+		E7C0356526EB4E5700B136F0 /* WordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WordCell.xib; sourceTree = "<group>"; };
+		E7C0356A26EB6CE400B136F0 /* SearchCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E70D3C1726F27E1E00A981B5 /* RealmSwift in Frameworks */,
+				E70D3C1526F27E1E00A981B5 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,12 +119,13 @@
 			children = (
 				E7C0352C26EB4A1D00B136F0 /* AppDelegate.swift */,
 				E7C0352E26EB4A1D00B136F0 /* SceneDelegate.swift */,
-				E7C0353026EB4A1D00B136F0 /* ViewController.swift */,
-				E7C0353226EB4A1D00B136F0 /* Main.storyboard */,
+				E7C0356126EB4A7100B136F0 /* Model */,
+				E7C0356026EB4A4E00B136F0 /* Views */,
+				E7C0355F26EB4A3400B136F0 /* Controller */,
 				E7C0353826EB4A1E00B136F0 /* Assets.xcassets */,
 				E7C0353A26EB4A1E00B136F0 /* LaunchScreen.storyboard */,
 				E7C0353D26EB4A1E00B136F0 /* Info.plist */,
-				E7C0353526EB4A1D00B136F0 /* Booky.xcdatamodeld */,
+				E7C0356226EB4C6F00B136F0 /* Constants.swift */,
 			);
 			path = Booky;
 			sourceTree = "<group>";
@@ -131,6 +148,35 @@
 			path = BookyUITests;
 			sourceTree = "<group>";
 		};
+		E7C0355F26EB4A3400B136F0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E7C0353026EB4A1D00B136F0 /* BookViewController.swift */,
+				E7C0356426EB4E5700B136F0 /* WordViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E7C0356026EB4A4E00B136F0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E70D3C1826F335FC00A981B5 /* WordCell.swift */,
+				E7C0353226EB4A1D00B136F0 /* Main.storyboard */,
+				E7C0356526EB4E5700B136F0 /* WordCell.xib */,
+				E7C0356A26EB6CE400B136F0 /* SearchCollectionReusableView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E7C0356126EB4A7100B136F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E70D3C0F26F27CE300A981B5 /* Book.swift */,
+				E70D3C1126F27CEF00A981B5 /* Word.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,6 +193,10 @@
 			dependencies = (
 			);
 			name = Booky;
+			packageProductDependencies = (
+				E70D3C1426F27E1E00A981B5 /* Realm */,
+				E70D3C1626F27E1E00A981B5 /* RealmSwift */,
+			);
 			productName = Booky;
 			productReference = E7C0352926EB4A1D00B136F0 /* Booky.app */;
 			productType = "com.apple.product-type.application";
@@ -155,6 +205,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7C0355926EB4A1E00B136F0 /* Build configuration list for PBXNativeTarget "BookyTests" */;
 			buildPhases = (
+				0990E25B5E0037B75EBAD65A /* [CP] Check Pods Manifest.lock */,
 				E7C0353E26EB4A1E00B136F0 /* Sources */,
 				E7C0353F26EB4A1E00B136F0 /* Frameworks */,
 				E7C0354026EB4A1E00B136F0 /* Resources */,
@@ -173,6 +224,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7C0355C26EB4A1E00B136F0 /* Build configuration list for PBXNativeTarget "BookyUITests" */;
 			buildPhases = (
+				13BF3FF2C7A0F20949B387B9 /* [CP] Check Pods Manifest.lock */,
 				E7C0354926EB4A1E00B136F0 /* Sources */,
 				E7C0354A26EB4A1E00B136F0 /* Frameworks */,
 				E7C0354B26EB4A1E00B136F0 /* Resources */,
@@ -218,6 +270,9 @@
 				Base,
 			);
 			mainGroup = E7C0352026EB4A1C00B136F0;
+			packageReferences = (
+				E70D3C1326F27E1E00A981B5 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = E7C0352A26EB4A1D00B136F0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -237,6 +292,7 @@
 				E7C0353C26EB4A1E00B136F0 /* LaunchScreen.storyboard in Resources */,
 				E7C0353926EB4A1E00B136F0 /* Assets.xcassets in Resources */,
 				E7C0353426EB4A1D00B136F0 /* Main.storyboard in Resources */,
+				E7C0356726EB4E5700B136F0 /* WordCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,15 +312,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0990E25B5E0037B75EBAD65A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BookyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		13BF3FF2C7A0F20949B387B9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Booky-BookyUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E7C0352526EB4A1D00B136F0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7C0353126EB4A1D00B136F0 /* ViewController.swift in Sources */,
+				E7C0356326EB4C6F00B136F0 /* Constants.swift in Sources */,
+				E70D3C1226F27CEF00A981B5 /* Word.swift in Sources */,
+				E7C0356626EB4E5700B136F0 /* WordViewController.swift in Sources */,
+				E70D3C1926F335FC00A981B5 /* WordCell.swift in Sources */,
+				E70D3C1026F27CE300A981B5 /* Book.swift in Sources */,
+				E7C0353126EB4A1D00B136F0 /* BookViewController.swift in Sources */,
 				E7C0352D26EB4A1D00B136F0 /* AppDelegate.swift in Sources */,
-				E7C0353726EB4A1D00B136F0 /* Booky.xcdatamodeld in Sources */,
 				E7C0352F26EB4A1D00B136F0 /* SceneDelegate.swift in Sources */,
+				E7C0356B26EB6CE400B136F0 /* SearchCollectionReusableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,18 +706,29 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCVersionGroup section */
-		E7C0353526EB4A1D00B136F0 /* Booky.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				E7C0353626EB4A1D00B136F0 /* Booky.xcdatamodel */,
-			);
-			currentVersion = E7C0353626EB4A1D00B136F0 /* Booky.xcdatamodel */;
-			path = Booky.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
+/* Begin XCRemoteSwiftPackageReference section */
+		E70D3C1326F27E1E00A981B5 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.15.0;
+			};
 		};
-/* End XCVersionGroup section */
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E70D3C1426F27E1E00A981B5 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E70D3C1326F27E1E00A981B5 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		E70D3C1626F27E1E00A981B5 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E70D3C1326F27E1E00A981B5 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E7C0352126EB4A1C00B136F0 /* Project object */;
 }

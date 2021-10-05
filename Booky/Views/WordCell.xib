@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TableViewController" customModule="Booky" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WordCell" id="L5s-wE-Xs0" customClass="WordCell" customModule="Booky" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="369" height="181"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Evc-dV-Vtq">
+                <rect key="frame" x="0.0" y="0.0" width="369" height="181"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="qAC-HQ-Xn8">
+                        <rect key="frame" x="0.0" y="0.0" width="369" height="181"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hTn-fB-FUY">
+                                <rect key="frame" x="0.0" y="0.0" width="369" height="150"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZZg-Cs-2FB">
+                                        <rect key="frame" x="10" y="10" width="172" height="126"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="TSq-xH-qXe" userLabel="Right Stack">
+                                                <rect key="frame" x="0.0" y="0.0" width="78.5" height="126"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Word" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0cy-kl-pXG">
+                                                        <rect key="frame" x="0.0" y="0.0" width="78.5" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Antonym" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I4b-gY-yfu">
+                                                        <rect key="frame" x="0.0" y="46" width="78.5" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Synonym" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xqN-fr-MdM">
+                                                        <rect key="frame" x="0.0" y="92" width="78.5" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" alignment="top" spacing="49" translatesAutoresizingMaskIntoConstraints="NO" id="b2G-dH-Nov" userLabel="Left Stack">
+                                                <rect key="frame" x="88.5" y="0.0" width="83.5" height="126"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Definition" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DfL-Te-kK1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="83.5" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" spellCheckingType="yes"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Example" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8By-6e-82C">
+                                                        <rect key="frame" x="0.0" y="92" width="83" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="b2G-dH-Nov" secondAttribute="bottom" id="7p2-8H-LKI"/>
+                                            <constraint firstAttribute="trailing" secondItem="b2G-dH-Nov" secondAttribute="trailing" id="Fu7-G5-Hji"/>
+                                            <constraint firstItem="b2G-dH-Nov" firstAttribute="leading" secondItem="TSq-xH-qXe" secondAttribute="trailing" constant="10" id="XS0-1C-Z5s"/>
+                                            <constraint firstItem="b2G-dH-Nov" firstAttribute="top" secondItem="ZZg-Cs-2FB" secondAttribute="top" id="fO7-cb-hey"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                <constraints>
+                                    <constraint firstItem="ZZg-Cs-2FB" firstAttribute="centerX" secondItem="hTn-fB-FUY" secondAttribute="centerX" constant="-88.5" id="CdL-qN-cEs"/>
+                                    <constraint firstItem="ZZg-Cs-2FB" firstAttribute="leading" secondItem="hTn-fB-FUY" secondAttribute="leading" constant="10" id="DA2-MN-t6h"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZZg-Cs-2FB" secondAttribute="bottom" constant="14" id="GvL-HX-Mhx"/>
+                                    <constraint firstItem="ZZg-Cs-2FB" firstAttribute="centerY" secondItem="hTn-fB-FUY" secondAttribute="centerY" constant="-2" id="Ie8-h8-JJs"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZZg-Cs-2FB" secondAttribute="trailing" constant="187" id="dru-eR-1XR"/>
+                                    <constraint firstItem="ZZg-Cs-2FB" firstAttribute="top" secondItem="hTn-fB-FUY" secondAttribute="top" constant="10" id="xv5-hH-Lh7"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2y7-ym-hBO">
+                                <rect key="frame" x="0.0" y="151" width="369" height="30"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="savePressed:" destination="L5s-wE-Xs0" eventType="touchUpInside" id="PkM-wh-CRK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="2y7-ym-hBO" secondAttribute="bottom" id="CcQ-D6-69h"/>
+                            <constraint firstItem="2y7-ym-hBO" firstAttribute="leading" secondItem="qAC-HQ-Xn8" secondAttribute="leading" id="Vxg-OY-xbY"/>
+                            <constraint firstAttribute="trailing" secondItem="2y7-ym-hBO" secondAttribute="trailing" id="wT7-ja-QUh"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="qAC-HQ-Xn8" firstAttribute="centerX" secondItem="Evc-dV-Vtq" secondAttribute="centerX" id="hh7-k3-H07"/>
+                    <constraint firstItem="qAC-HQ-Xn8" firstAttribute="top" secondItem="Evc-dV-Vtq" secondAttribute="top" id="ir0-Se-9aa"/>
+                    <constraint firstItem="qAC-HQ-Xn8" firstAttribute="leading" secondItem="Evc-dV-Vtq" secondAttribute="leading" id="kCP-GJ-QLl"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="190" height="116"/>
+            <connections>
+                <outlet property="antonymField" destination="I4b-gY-yfu" id="ccu-56-JZ9"/>
+                <outlet property="definitionField" destination="DfL-Te-kK1" id="N19-gs-6Cz"/>
+                <outlet property="exampleField" destination="8By-6e-82C" id="GVn-av-aeo"/>
+                <outlet property="saveButton" destination="2y7-ym-hBO" id="ycg-zb-I0Q"/>
+                <outlet property="synonymField" destination="xqN-fr-MdM" id="kSR-bf-b1R"/>
+                <outlet property="wordField" destination="0cy-kl-pXG" id="hBx-Ve-e1o"/>
+                <outletCollection property="fieldsCollection" destination="I4b-gY-yfu" collectionClass="NSMutableArray" id="b62-wV-cjH"/>
+                <outletCollection property="fieldsCollection" destination="0cy-kl-pXG" collectionClass="NSMutableArray" id="E8a-OM-hhY"/>
+                <outletCollection property="fieldsCollection" destination="8By-6e-82C" collectionClass="NSMutableArray" id="Eof-1b-bLQ"/>
+                <outletCollection property="fieldsCollection" destination="xqN-fr-MdM" collectionClass="NSMutableArray" id="c0d-zJ-ado"/>
+                <outletCollection property="fieldsCollection" destination="DfL-Te-kK1" collectionClass="NSMutableArray" id="Ln5-Av-sQh"/>
+            </connections>
+            <point key="canvasLocation" x="-400.72463768115944" y="35.15625"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

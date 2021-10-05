@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20G95" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Book" representedClassName=".Book" syncable="YES" codeGenerationType="class">
+        <attribute name="author" attributeType="String"/>
+        <attribute name="title" attributeType="String"/>
+        <relationship name="word" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word" inverseName="book" inverseEntity="Word"/>
+    </entity>
+    <entity name="Word" representedClassName=".Word" syncable="YES" codeGenerationType="class">
+        <attribute name="definition" attributeType="String"/>
+        <attribute name="example" attributeType="String"/>
+        <attribute name="learned" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="opposite" attributeType="String"/>
+        <attribute name="synonym" attributeType="String"/>
+        <attribute name="word" attributeType="String"/>
+        <relationship name="book" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Book" inverseName="word" inverseEntity="Book"/>
+    </entity>
+    <elements>
+        <element name="Book" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="Word" positionX="-234.91796875" positionY="9.23828125" width="128" height="148"/>
+    </elements>
+</model>
