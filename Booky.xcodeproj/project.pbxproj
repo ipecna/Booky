@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E708038E27307A3D004C422F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E708038D27307A3D004C422F /* SearchViewController.swift */; };
 		E70D3C1026F27CE300A981B5 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70D3C0F26F27CE300A981B5 /* Book.swift */; };
 		E70D3C1226F27CEF00A981B5 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70D3C1126F27CEF00A981B5 /* Word.swift */; };
 		E70D3C1526F27E1E00A981B5 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = E70D3C1426F27E1E00A981B5 /* Realm */; };
 		E70D3C1726F27E1E00A981B5 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E70D3C1626F27E1E00A981B5 /* RealmSwift */; };
-		E70D3C1926F335FC00A981B5 /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70D3C1826F335FC00A981B5 /* WordCell.swift */; };
+		E70D3C1926F335FC00A981B5 /* PromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70D3C1826F335FC00A981B5 /* PromptView.swift */; };
+		E72C771C27121D2E0094AC11 /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72C771B27121D2E0094AC11 /* WordCell.swift */; };
+		E72C771E2712207D0094AC11 /* PromptView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E72C771D2712207D0094AC11 /* PromptView.xib */; };
+		E72C77BB2726BE710094AC11 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72C77BA2726BE710094AC11 /* Extensions.swift */; };
 		E7C0352D26EB4A1D00B136F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0352C26EB4A1D00B136F0 /* AppDelegate.swift */; };
 		E7C0352F26EB4A1D00B136F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0352E26EB4A1D00B136F0 /* SceneDelegate.swift */; };
 		E7C0353126EB4A1D00B136F0 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0353026EB4A1D00B136F0 /* BookViewController.swift */; };
@@ -22,7 +26,6 @@
 		E7C0355226EB4A1E00B136F0 /* BookyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0355126EB4A1E00B136F0 /* BookyUITests.swift */; };
 		E7C0356326EB4C6F00B136F0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0356226EB4C6F00B136F0 /* Constants.swift */; };
 		E7C0356626EB4E5700B136F0 /* WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0356426EB4E5700B136F0 /* WordViewController.swift */; };
-		E7C0356726EB4E5700B136F0 /* WordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7C0356526EB4E5700B136F0 /* WordCell.xib */; };
 		E7C0356B26EB6CE400B136F0 /* SearchCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0356A26EB6CE400B136F0 /* SearchCollectionReusableView.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,9 +47,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E708038D27307A3D004C422F /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		E70D3C0F26F27CE300A981B5 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		E70D3C1126F27CEF00A981B5 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
-		E70D3C1826F335FC00A981B5 /* WordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WordCell.swift; path = Booky/Views/WordCell.swift; sourceTree = SOURCE_ROOT; };
+		E70D3C1826F335FC00A981B5 /* PromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PromptView.swift; path = Booky/Views/PromptView.swift; sourceTree = SOURCE_ROOT; };
+		E72C771B27121D2E0094AC11 /* WordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCell.swift; sourceTree = "<group>"; };
+		E72C771D2712207D0094AC11 /* PromptView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromptView.xib; sourceTree = "<group>"; };
+		E72C77BA2726BE710094AC11 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E7C0352926EB4A1D00B136F0 /* Booky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Booky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7C0352C26EB4A1D00B136F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7C0352E26EB4A1D00B136F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,7 +70,6 @@
 		E7C0355326EB4A1E00B136F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7C0356226EB4C6F00B136F0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E7C0356426EB4E5700B136F0 /* WordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewController.swift; sourceTree = "<group>"; };
-		E7C0356526EB4E5700B136F0 /* WordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WordCell.xib; sourceTree = "<group>"; };
 		E7C0356A26EB6CE400B136F0 /* SearchCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,10 +128,11 @@
 				E7C0356126EB4A7100B136F0 /* Model */,
 				E7C0356026EB4A4E00B136F0 /* Views */,
 				E7C0355F26EB4A3400B136F0 /* Controller */,
-				E7C0353826EB4A1E00B136F0 /* Assets.xcassets */,
-				E7C0353A26EB4A1E00B136F0 /* LaunchScreen.storyboard */,
-				E7C0353D26EB4A1E00B136F0 /* Info.plist */,
 				E7C0356226EB4C6F00B136F0 /* Constants.swift */,
+				E72C77BA2726BE710094AC11 /* Extensions.swift */,
+				E7C0353826EB4A1E00B136F0 /* Assets.xcassets */,
+				E7C0353D26EB4A1E00B136F0 /* Info.plist */,
+				E7C0353A26EB4A1E00B136F0 /* LaunchScreen.storyboard */,
 			);
 			path = Booky;
 			sourceTree = "<group>";
@@ -160,10 +167,12 @@
 		E7C0356026EB4A4E00B136F0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E70D3C1826F335FC00A981B5 /* WordCell.swift */,
+				E70D3C1826F335FC00A981B5 /* PromptView.swift */,
+				E72C771D2712207D0094AC11 /* PromptView.xib */,
+				E72C771B27121D2E0094AC11 /* WordCell.swift */,
 				E7C0353226EB4A1D00B136F0 /* Main.storyboard */,
-				E7C0356526EB4E5700B136F0 /* WordCell.xib */,
 				E7C0356A26EB6CE400B136F0 /* SearchCollectionReusableView.swift */,
+				E708038D27307A3D004C422F /* SearchViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -292,7 +301,7 @@
 				E7C0353C26EB4A1E00B136F0 /* LaunchScreen.storyboard in Resources */,
 				E7C0353926EB4A1E00B136F0 /* Assets.xcassets in Resources */,
 				E7C0353426EB4A1D00B136F0 /* Main.storyboard in Resources */,
-				E7C0356726EB4E5700B136F0 /* WordCell.xib in Resources */,
+				E72C771E2712207D0094AC11 /* PromptView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,11 +376,14 @@
 				E7C0356326EB4C6F00B136F0 /* Constants.swift in Sources */,
 				E70D3C1226F27CEF00A981B5 /* Word.swift in Sources */,
 				E7C0356626EB4E5700B136F0 /* WordViewController.swift in Sources */,
-				E70D3C1926F335FC00A981B5 /* WordCell.swift in Sources */,
+				E70D3C1926F335FC00A981B5 /* PromptView.swift in Sources */,
 				E70D3C1026F27CE300A981B5 /* Book.swift in Sources */,
 				E7C0353126EB4A1D00B136F0 /* BookViewController.swift in Sources */,
+				E708038E27307A3D004C422F /* SearchViewController.swift in Sources */,
 				E7C0352D26EB4A1D00B136F0 /* AppDelegate.swift in Sources */,
+				E72C771C27121D2E0094AC11 /* WordCell.swift in Sources */,
 				E7C0352F26EB4A1D00B136F0 /* SceneDelegate.swift in Sources */,
+				E72C77BB2726BE710094AC11 /* Extensions.swift in Sources */,
 				E7C0356B26EB6CE400B136F0 /* SearchCollectionReusableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

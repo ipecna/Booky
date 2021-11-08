@@ -14,10 +14,9 @@ class BookViewController: UICollectionViewController {
         
     let realm = try! Realm()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
         loadBooks()
         
         //print(Realm.Configuration.defaultConfiguration.fileURL)
@@ -98,10 +97,10 @@ class BookViewController: UICollectionViewController {
     }
     
     //MARK: - Collection View Delegate
-    
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: K.segueIdentifier, sender: self)
-    }
+//
+//    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        performSegue(withIdentifier: K.segueIdentifier, sender: self)
+//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! WordViewController
@@ -111,13 +110,12 @@ class BookViewController: UICollectionViewController {
             destinationVC.selectedBook = booksArray?[index.item]
         
             destinationVC.title = booksArray?[index.item].title
-            
         }
     }
 }
 
 
-extension BookViewController : UISearchBarDelegate {
+extension BookViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
       
