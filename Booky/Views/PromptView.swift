@@ -110,7 +110,6 @@ class PromptView: UIView, UITextFieldDelegate {
         }
         vc.view.addSubview(promptView)
     }
-    
 }
 
 protocol WordCellDelegate {

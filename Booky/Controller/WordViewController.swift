@@ -49,7 +49,10 @@ class WordViewController: UIViewController, WordCellDelegate, UIViewControllerTr
     
     //MARK: - Prompt View Delegate
     func buttonPressed(_ word: Word, _ prompt: PromptView, _ validationWord: Word) {
-        
+        /*
+         DO SOMETHING WITH THIS MONSTROSITY
+         PLEASE, FUTURE ME
+         */
         if prompt.id == validationWord._id {
             word._id = validationWord._id
             if !prompt.checkEmpty(prompt, vc: self) {
@@ -97,6 +100,10 @@ class WordViewController: UIViewController, WordCellDelegate, UIViewControllerTr
     
     //MARK: - Deleting Cells
     @objc func deleteCell(_ index: IndexPath) {
+        
+        /*
+        TRANSFER TO DATA MANAGER
+        */
         
         if let word = wordArray?[index.item] {
             do {
@@ -173,7 +180,7 @@ class WordViewController: UIViewController, WordCellDelegate, UIViewControllerTr
         dataSource.apply(snapshot, animatingDifferences: false)
     }
     
-    //MARK: - Delete Button
+//MARK: - Search Button
     func createSearchButton() {
         searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(openSearch))
         searchButton?.isEnabled = true
@@ -182,9 +189,8 @@ class WordViewController: UIViewController, WordCellDelegate, UIViewControllerTr
     
     @objc func openSearch() {
         if let vc = storyboard?.instantiateViewController(identifier: "searchVC") as? SearchViewController {
-        
-            vc.allWords = wordArray
-            present(vc, animated: true)
+            vc.selectedBook = selectedBook
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }
@@ -205,7 +211,7 @@ extension WordViewController : UICollectionViewDelegate, UIGestureRecognizerDele
 
         return false
     }
-    //MARK: - Long Press
+//MARK: - Long Press
     
     func setupLongPressGesture() {
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
@@ -217,15 +223,12 @@ extension WordViewController : UICollectionViewDelegate, UIGestureRecognizerDele
     
     @objc func handleLongPress(gestureRecognizer: UILongPressGestureRecognizer) {
         guard gestureRecognizer.state != .began else { return }
-        //let point = gestureRecognizer.location(in: self.collectionView)
-        //let indexPath = self.collectionView.indexPathForItem(at: point)
-
     }
     
     func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
         configureContextMenu(index: indexPath)
     }
-    
+
     func configureContextMenu(index: IndexPath) -> UIContextMenuConfiguration {
         let itemIndex = index
         let context = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { (action) -> UIMenu? in
@@ -254,9 +257,7 @@ extension WordViewController : UICollectionViewDelegate, UIGestureRecognizerDele
 
             return UIMenu(title: "", image: nil, identifier: nil, options: UIMenu.Options.displayInline, children: [learned, edit, delete])
         }
-        
         return context
-        
     }
 }
 
