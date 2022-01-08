@@ -33,10 +33,17 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+    
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        setUpSearchController()
+        configureNavigationBar(largeTitleColor: .black, backgoundColor: UIColor(named: "Search Primary")!, tintColor: .black, title: "", preferredLargeTitle: false)
+        navigationController?.navigationBar.isTranslucent = true
         configureHierarchy()
         configureDataSource()
+        setUpSearchController()
     }
     
     private func createLayout() -> UICollectionViewLayout {
@@ -56,9 +63,9 @@ class SearchViewController: UIViewController {
     
     func configureHierarchy() {
         collectionView = UICollectionView(frame: CGRect(x: 0,
-                                                        y: view.frame.origin.y + 70,
+                                                        y: view.frame.origin.y + 10,
                                                         width: view.bounds.width,
-                                                        height: view.bounds.height - 80),
+                                                        height: view.bounds.height - 10),
                                                         collectionViewLayout: createLayout())
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.backgroundColor = .systemBackground
@@ -98,15 +105,16 @@ class SearchViewController: UIViewController {
 extension SearchViewController : UISearchControllerDelegate, UISearchBarDelegate {
     
     func setUpSearchController() {
+        navigationItem.searchController = searchController
         searchController.delegate = self
         searchController.searchBar.delegate = self
         searchController.searchBar.showsBookmarkButton = true
         searchController.searchBar.setImage(UIImage(systemName: "list.bullet.indent"), for: .bookmark, state: .normal)
         searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.obscuresBackgroundDuringPresentation = true
         searchController.searchBar.placeholder = "Enter the word, synonym, or antonym"
-        navigationItem.searchController = searchController
-        navigationItem.hidesSearchBarWhenScrolling = false
+        navigationItem.titleView = searchController.searchBar
+        navigationItem.hidesSearchBarWhenScrolling = true
         definesPresentationContext = true
     }
     

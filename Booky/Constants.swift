@@ -17,4 +17,8 @@ struct K {
     static let titleTag = 100
     static let authorTag = 200
     static let headerIdentifier = "HeaderIdentifier"
+    static let tabIdentifier = "TabBarController"
+    static let gameVCIdentifier = "GameViewController"
+    static let wordViewControllerIdentifier = "WordViewController"
+    static let searchViewController = "SearchViewController"
 }

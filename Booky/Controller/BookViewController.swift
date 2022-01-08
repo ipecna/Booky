@@ -17,9 +17,8 @@ class BookViewController: UICollectionViewController, UISearchControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         loadBooks()
-        
-        //navigationController?.tabBarItem.isEnabled = false
-       // navigationController?.tabBarController?.tabBar.isHidden = true
+        view.backgroundColor = .systemBackground
+        configureNavigationBar(largeTitleColor: .black, backgoundColor: .systemBackground, tintColor: .black, title: "", preferredLargeTitle: false)
         //print(Realm.Configuration.defaultConfiguration.fileURL)
     }
     
@@ -100,16 +99,13 @@ class BookViewController: UICollectionViewController, UISearchControllerDelegate
     //MARK: - Collection View Delegate
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! WordViewController
+        let destinationVC = segue.destination as! TabBarController
         
         if let indexPath = collectionView.indexPathsForSelectedItems {
             let index = indexPath[0]
             destinationVC.selectedBook = booksArray?[index.item]
-        
-            destinationVC.title = booksArray?[index.item].title
         }
     }
-    
 }
 
 

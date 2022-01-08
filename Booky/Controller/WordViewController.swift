@@ -15,7 +15,7 @@ class WordViewController: UIViewController, WordCellDelegate, UIViewControllerTr
             loadWords()
         }
     }
-    var searchButton: UIBarButtonItem?
+    
     var wordArray: Results<Word>?
     let realm = try! Realm()
     var collectionView: UICollectionView!
@@ -29,17 +29,18 @@ class WordViewController: UIViewController, WordCellDelegate, UIViewControllerTr
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-        configureHierarchy()
-        configureDataSource()
-        collectionView.delegate = self
-        createSearchButton()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
+        loadWords()
+        configureHierarchy()
+        configureDataSource()
+        collectionView.delegate = self
         promptView.createPrompt(self)
+        view.backgroundColor = .systemBackground
+        configureNavigationBar(largeTitleColor: .black, backgoundColor: UIColor(named: "Foreground")!, tintColor: .black, title: "", preferredLargeTitle: false)
     }
     
     //MARK: - Loading Words
@@ -79,8 +80,8 @@ class WordViewController: UIViewController, WordCellDelegate, UIViewControllerTr
                 do {
                     try realm.write({
                         selectedBook?.words.append(word)
+                        loadWords()
                         getSnapshot()
-                        
                     })
                 } catch {
                     fatalError("You coded it wrong. Again")
@@ -94,16 +95,11 @@ class WordViewController: UIViewController, WordCellDelegate, UIViewControllerTr
     func editWord(_ word: Word, _ prompt: PromptView, id: String) {
         deletePrompt(prompt)
         prompt.createPrompt(self, word)
-        //prompt.createPrompt(self, word)
     }
     
     
     //MARK: - Deleting Cells
     @objc func deleteCell(_ index: IndexPath) {
-        
-        /*
-        TRANSFER TO DATA MANAGER
-        */
         
         if let word = wordArray?[index.item] {
             do {
@@ -142,9 +138,9 @@ class WordViewController: UIViewController, WordCellDelegate, UIViewControllerTr
     
     func configureHierarchy() {
         collectionView = UICollectionView(frame: CGRect(x: 0,
-                                                        y: view.frame.origin.y + 270,
+                                                        y: view.frame.origin.y + 180,
                                                         width: view.bounds.width,
-                                                        height: view.bounds.height - 280),
+                                                        height: view.bounds.height - 180),
                                                         collectionViewLayout: createLayout())
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.backgroundColor = .systemBackground
@@ -180,19 +176,6 @@ class WordViewController: UIViewController, WordCellDelegate, UIViewControllerTr
         dataSource.apply(snapshot, animatingDifferences: false)
     }
     
-//MARK: - Search Button
-    func createSearchButton() {
-        searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(openSearch))
-        searchButton?.isEnabled = true
-        self.navigationItem.rightBarButtonItem = searchButton
-    }
-    
-    @objc func openSearch() {
-        if let vc = storyboard?.instantiateViewController(identifier: "searchVC") as? SearchViewController {
-            vc.selectedBook = selectedBook
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-    }
 }
 
 //MARK: - Handling Selection
@@ -229,11 +212,13 @@ extension WordViewController : UICollectionViewDelegate, UIGestureRecognizerDele
         configureContextMenu(index: indexPath)
     }
 
+    //MARK: - Context Menu
+    
     func configureContextMenu(index: IndexPath) -> UIContextMenuConfiguration {
         let itemIndex = index
         let context = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { (action) -> UIMenu? in
             let learned = UIAction(title: "Learned", image: UIImage(systemName: "hands.clap.fill"), identifier: nil, discoverabilityTitle: nil, state: .off) { [weak self] (_) in
-                // deal with changing the learned property of the word
+                //TODO: deal with changing the learned property of the word
                 guard let word = self?.dataSource.itemIdentifier(for: itemIndex) else { fatalError("unable to retrieve word from index path") }
                 do {
                     try self?.realm.write({
@@ -249,7 +234,7 @@ extension WordViewController : UICollectionViewDelegate, UIGestureRecognizerDele
                 }
             }
             let edit = UIAction(title: "Edit", image: UIImage(systemName: "rectangle.and.pencil.and.ellipsis"), identifier: nil, discoverabilityTitle: nil, state: .off) { [weak self] (action) in
-                //deal with editing items
+                //TODO: deal with editing items
                 
                 guard let word = self?.dataSource.itemIdentifier(for: itemIndex) else { fatalError("unable to retrieve word from index path") }
                 self?.editWord(word, self!.promptView, id: word._id)
