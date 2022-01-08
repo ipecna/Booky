@@ -8,17 +8,17 @@
 import UIKit
 import RealmSwift
 
-class BookViewController: UICollectionViewController {
+class BookViewController: UICollectionViewController, UISearchControllerDelegate {
     
     var booksArray: Results<Book>?
-        
+    let searchController = UISearchController(searchResultsController: nil)
     let realm = try! Realm()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadBooks()
-        
+        view.backgroundColor = .systemBackground
+        configureNavigationBar(largeTitleColor: .black, backgoundColor: .systemBackground, tintColor: .black, title: "", preferredLargeTitle: false)
         //print(Realm.Configuration.defaultConfiguration.fileURL)
     }
     
@@ -97,51 +97,48 @@ class BookViewController: UICollectionViewController {
     }
     
     //MARK: - Collection View Delegate
-//
-//    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        performSegue(withIdentifier: K.segueIdentifier, sender: self)
-//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! WordViewController
+        let destinationVC = segue.destination as! TabBarController
         
         if let indexPath = collectionView.indexPathsForSelectedItems {
             let index = indexPath[0]
             destinationVC.selectedBook = booksArray?[index.item]
-        
-            destinationVC.title = booksArray?[index.item].title
         }
     }
 }
 
 
-extension BookViewController: UISearchBarDelegate {
+extension BookViewController: UISearchBarDelegate, UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        
+    }
+    
+    func setupSearchController() {
+        searchController.delegate = self
+        searchController.searchBar.delegate = self
+        searchController.searchBar.showsBookmarkButton = true
+        searchController.searchBar.setImage(UIImage(systemName: "list.bullet.indent"), for: .bookmark, state: .normal)
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Enter the word, synonym, or antonym"
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        definesPresentationContext = true
+    }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
       
     }
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchBar.text?.count == 0 {
-            loadBooks()
-            
-            DispatchQueue.main.async {
-                searchBar.resignFirstResponder()
-            }
-        }
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        
-        if (kind == UICollectionView.elementKindSectionHeader) {
-            let headerView:UICollectionReusableView =  collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: K.headerIdentifier, for: indexPath)
-            
-            return headerView
-        }
-        
-        return UICollectionReusableView()
-        
-    }
-    
-    
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        if searchBar.text?.count == 0 {
+//            loadBooks()
+//
+//            DispatchQueue.main.async {
+//                searchBar.resignFirstResponder()
+//            }
+//        }
+//    }
 }

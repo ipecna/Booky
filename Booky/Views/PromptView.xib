@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -12,42 +13,42 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clipsSubviews="YES" contentMode="scaleToFill" id="S2S-iF-tyf" customClass="PromptView" customModule="Booky" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="376" height="170"/>
+            <rect key="frame" x="0.0" y="0.0" width="383" height="180"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="NgZ-Fw-uPK">
-                    <rect key="frame" x="10" y="10" width="316" height="118"/>
+                    <rect key="frame" x="10" y="10" width="323" height="118"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cun-et-twV" userLabel="Left Stack">
-                            <rect key="frame" x="0.0" y="0.0" width="143" height="118"/>
+                            <rect key="frame" x="0.0" y="0.0" width="146.66666666666666" height="118"/>
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Word" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fdK-wW-e0t">
-                                    <rect key="frame" x="0.0" y="0.0" width="143" height="34"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="146.66666666666666" height="34"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Synonym" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cQg-gL-Dfn">
-                                    <rect key="frame" x="0.0" y="42" width="143" height="34"/>
+                                    <rect key="frame" x="0.0" y="42" width="146.66666666666666" height="34"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Antonym" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gE5-mg-TPC">
-                                    <rect key="frame" x="0.0" y="84" width="143" height="34"/>
+                                    <rect key="frame" x="0.0" y="84" width="146.66666666666666" height="34"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                 </textField>
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="dSH-wL-B1J" userLabel="Right Stack">
-                            <rect key="frame" x="173" y="0.0" width="143" height="118"/>
+                            <rect key="frame" x="176.66666666666663" y="0.0" width="146.33333333333337" height="118"/>
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Definition" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Y3-71-faR">
-                                    <rect key="frame" x="0.0" y="0.0" width="143" height="34"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="146.33333333333334" height="34"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Example" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vcM-yY-yfS">
-                                    <rect key="frame" x="0.0" y="84" width="143" height="34"/>
+                                    <rect key="frame" x="0.0" y="84" width="146.33333333333334" height="34"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                 </textField>
@@ -56,7 +57,7 @@
                     </subviews>
                 </stackView>
                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2m-0r-tRR">
-                    <rect key="frame" x="0.0" y="138" width="376" height="32"/>
+                    <rect key="frame" x="0.0" y="138" width="383" height="42"/>
                     <color key="backgroundColor" red="0.85422167638484847" green="0.74120093047975755" blue="0.51538161194964183" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                     <color key="tintColor" systemColor="opaqueSeparatorColor"/>
@@ -96,7 +97,7 @@
                 <outletCollection property="fieldsCollection" destination="vcM-yY-yfS" collectionClass="NSMutableArray" id="943-GX-f8u"/>
                 <outletCollection property="fieldsCollection" destination="7Y3-71-faR" collectionClass="NSMutableArray" id="r7w-sw-0t9"/>
             </connections>
-            <point key="canvasLocation" x="-989.23076923076917" y="-776.30331753554503"/>
+            <point key="canvasLocation" x="-994.61538461538453" y="-772.74881516587675"/>
         </view>
     </objects>
     <resources>

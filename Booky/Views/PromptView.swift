@@ -75,7 +75,7 @@ class PromptView: UIView, UITextFieldDelegate {
     }
     
     func checkRepetition(_ prompt: PromptView, vc: WordViewController) -> Bool {
-        guard let results = vc.wordArray else { fatalError() }
+        guard let results = vc.wordArray else { return false }
         let suspiciousWord = prompt.wordField.text
         var result = false
         
@@ -95,7 +95,7 @@ class PromptView: UIView, UITextFieldDelegate {
         let allViewsInXib = Bundle.main.loadNibNamed("PromptView", owner: PromptView.self, options: nil)
         promptView = allViewsInXib?.first as! PromptView
         promptView.delegate = vc
-        promptView.frame = CGRect(x: 5, y: 100, width: vc.view.frame.width - 10, height: 170)
+        promptView.frame = CGRect(x: 5, y: 10, width: vc.view.frame.width - 10, height: 170)
         promptView.layer.cornerRadius = .pi * 4
         
         if word != nil {
@@ -110,7 +110,6 @@ class PromptView: UIView, UITextFieldDelegate {
         }
         vc.view.addSubview(promptView)
     }
-    
 }
 
 protocol WordCellDelegate {

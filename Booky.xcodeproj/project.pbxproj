@@ -16,6 +16,8 @@
 		E72C771C27121D2E0094AC11 /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72C771B27121D2E0094AC11 /* WordCell.swift */; };
 		E72C771E2712207D0094AC11 /* PromptView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E72C771D2712207D0094AC11 /* PromptView.xib */; };
 		E72C77BB2726BE710094AC11 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72C77BA2726BE710094AC11 /* Extensions.swift */; };
+		E791D4EE2754F43A004E0548 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E791D4ED2754F43A004E0548 /* GameViewController.swift */; };
+		E791D4F02756A26E004E0548 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E791D4EF2756A26E004E0548 /* TabBarController.swift */; };
 		E7C0352D26EB4A1D00B136F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0352C26EB4A1D00B136F0 /* AppDelegate.swift */; };
 		E7C0352F26EB4A1D00B136F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0352E26EB4A1D00B136F0 /* SceneDelegate.swift */; };
 		E7C0353126EB4A1D00B136F0 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0353026EB4A1D00B136F0 /* BookViewController.swift */; };
@@ -26,7 +28,6 @@
 		E7C0355226EB4A1E00B136F0 /* BookyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0355126EB4A1E00B136F0 /* BookyUITests.swift */; };
 		E7C0356326EB4C6F00B136F0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0356226EB4C6F00B136F0 /* Constants.swift */; };
 		E7C0356626EB4E5700B136F0 /* WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0356426EB4E5700B136F0 /* WordViewController.swift */; };
-		E7C0356B26EB6CE400B136F0 /* SearchCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0356A26EB6CE400B136F0 /* SearchCollectionReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		E72C771B27121D2E0094AC11 /* WordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCell.swift; sourceTree = "<group>"; };
 		E72C771D2712207D0094AC11 /* PromptView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromptView.xib; sourceTree = "<group>"; };
 		E72C77BA2726BE710094AC11 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E791D4ED2754F43A004E0548 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		E791D4EF2756A26E004E0548 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		E7C0352926EB4A1D00B136F0 /* Booky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Booky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7C0352C26EB4A1D00B136F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7C0352E26EB4A1D00B136F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,7 +73,6 @@
 		E7C0355326EB4A1E00B136F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7C0356226EB4C6F00B136F0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E7C0356426EB4E5700B136F0 /* WordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewController.swift; sourceTree = "<group>"; };
-		E7C0356A26EB6CE400B136F0 /* SearchCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,9 @@
 			children = (
 				E7C0353026EB4A1D00B136F0 /* BookViewController.swift */,
 				E7C0356426EB4E5700B136F0 /* WordViewController.swift */,
+				E708038D27307A3D004C422F /* SearchViewController.swift */,
+				E791D4ED2754F43A004E0548 /* GameViewController.swift */,
+				E791D4EF2756A26E004E0548 /* TabBarController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -171,8 +176,6 @@
 				E72C771D2712207D0094AC11 /* PromptView.xib */,
 				E72C771B27121D2E0094AC11 /* WordCell.swift */,
 				E7C0353226EB4A1D00B136F0 /* Main.storyboard */,
-				E7C0356A26EB6CE400B136F0 /* SearchCollectionReusableView.swift */,
-				E708038D27307A3D004C422F /* SearchViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -374,9 +377,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7C0356326EB4C6F00B136F0 /* Constants.swift in Sources */,
+				E791D4F02756A26E004E0548 /* TabBarController.swift in Sources */,
 				E70D3C1226F27CEF00A981B5 /* Word.swift in Sources */,
 				E7C0356626EB4E5700B136F0 /* WordViewController.swift in Sources */,
 				E70D3C1926F335FC00A981B5 /* PromptView.swift in Sources */,
+				E791D4EE2754F43A004E0548 /* GameViewController.swift in Sources */,
 				E70D3C1026F27CE300A981B5 /* Book.swift in Sources */,
 				E7C0353126EB4A1D00B136F0 /* BookViewController.swift in Sources */,
 				E708038E27307A3D004C422F /* SearchViewController.swift in Sources */,
@@ -384,7 +389,6 @@
 				E72C771C27121D2E0094AC11 /* WordCell.swift in Sources */,
 				E7C0352F26EB4A1D00B136F0 /* SceneDelegate.swift in Sources */,
 				E72C77BB2726BE710094AC11 /* Extensions.swift in Sources */,
-				E7C0356B26EB6CE400B136F0 /* SearchCollectionReusableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,7 +574,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = SCChulkov.Booky;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -589,7 +593,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = SCChulkov.Booky;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
