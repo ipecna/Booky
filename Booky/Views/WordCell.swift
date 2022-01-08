@@ -117,7 +117,8 @@ class WordCell: UICollectionViewCell {
         closedConstraint?.isActive = !isSelected
         openConstraint?.isActive = isSelected
         
-        UIView.animate(withDuration: 0.3) { // 0.3 seconds matches collection view animation
+        UIView.animate(withDuration: 0.3) {
+            // 0.3 seconds matches collection view animation
             // Set the rotation just under 180º so that it rotates back the same way
             let upsideDown = CGAffineTransform(rotationAngle: .pi * 0.999 )
             self.disclosureIndicator.transform = self.isSelected ? upsideDown :.identity

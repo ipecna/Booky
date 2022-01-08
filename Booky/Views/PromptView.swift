@@ -40,7 +40,7 @@ class PromptView: UIView, UITextFieldDelegate {
     
     @IBAction func savePressed(_ sender: UIButton) {
         newWord = Word()
-        guard let safeWord = newWord else { fatalError("word is nil") }
+        guard let safeWord = newWord else { fatalError("The word is nil") }
         
         for field in fieldsCollection {
             

@@ -34,6 +34,7 @@ class WordViewController: UIViewController, WordCellDelegate, UIViewControllerTr
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
         loadWords()
         configureHierarchy()
         configureDataSource()

@@ -13,12 +13,14 @@ class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupVCs()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         view.backgroundColor = .systemBackground
-        setupVCs()
+        
     }
 
     func setupVCs() {
@@ -28,6 +30,7 @@ class TabBarController: UITabBarController {
         createNavController(for: GameViewController(), title: NSLocalizedString("Play", comment: ""), image: UIImage(systemName: "gamecontroller")!)
         ]
         guard let viewControllers = viewControllers else { return }
+        
         for vc in viewControllers {
             switch vc {
             case let viewController as WordViewController:
