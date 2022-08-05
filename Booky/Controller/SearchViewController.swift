@@ -10,6 +10,7 @@ import RealmSwift
 
 class SearchViewController: UIViewController {
     
+    var searchBar: UISearchBar!
     var collectionView: UICollectionView!
     var selectedBook: Book? {
         didSet {
@@ -19,9 +20,9 @@ class SearchViewController: UIViewController {
     var allWords: Results<Word>!
     var filteredWords: [Word]?
     let realm = try! Realm()
-    let searchController = UISearchController(searchResultsController: nil)
+    
     var isSearchBarEmpty: Bool {
-      return searchController.searchBar.text?.isEmpty ?? true
+      return searchBar.text?.isEmpty ?? true
     }
     
     enum Section {
@@ -33,7 +34,7 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-    
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,7 +44,6 @@ class SearchViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = true
         configureHierarchy()
         configureDataSource()
-        setUpSearchController()
     }
     
     private func createLayout() -> UICollectionViewLayout {
@@ -62,8 +62,16 @@ class SearchViewController: UIViewController {
     }
     
     func configureHierarchy() {
+        searchBar = UISearchBar(frame: CGRect(x: 0,
+                                              y: view.frame.origin.y + 90,
+                                              width: view.bounds.width,
+                                              height: 50))
+        //TODO: find a way to color the search bar
+        searchBar.delegate = self
+        view.addSubview(searchBar)
+        searchBar.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView = UICollectionView(frame: CGRect(x: 0,
-                                                        y: view.frame.origin.y + 10,
+                                                        y: searchBar.frame.maxY,
                                                         width: view.bounds.width,
                                                         height: view.bounds.height - 10),
                                                         collectionViewLayout: createLayout())
@@ -71,6 +79,7 @@ class SearchViewController: UIViewController {
         collectionView.backgroundColor = .systemBackground
         collectionView.isScrollEnabled = true
         collectionView.register(WordCell.self, forCellWithReuseIdentifier: K.wordCellIdentifier)
+        collectionView.delegate = self
         view.addSubview(collectionView)
     }
     
@@ -102,44 +111,26 @@ class SearchViewController: UIViewController {
     }
 }
 
-extension SearchViewController : UISearchControllerDelegate, UISearchBarDelegate {
-    
-    func setUpSearchController() {
-        navigationItem.searchController = searchController
-        searchController.delegate = self
-        searchController.searchBar.delegate = self
-        searchController.searchBar.showsBookmarkButton = true
-        searchController.searchBar.setImage(UIImage(systemName: "list.bullet.indent"), for: .bookmark, state: .normal)
-        searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = true
-        searchController.searchBar.placeholder = "Enter the word, synonym, or antonym"
-        navigationItem.titleView = searchController.searchBar
-        navigationItem.hidesSearchBarWhenScrolling = true
-        definesPresentationContext = true
-    }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchBar.text?.count == 0 {
-            loadWords()
-            getSnapshot()
+extension SearchViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        guard let dataSource = dataSource else { return false }
 
-            DispatchQueue.main.async {
-                searchBar.resignFirstResponder()
-            }
+        if collectionView.indexPathsForSelectedItems?.contains(indexPath) ?? false {
+            collectionView.deselectItem(at: indexPath, animated: true)
+        } else {
+            collectionView.selectItem(at: indexPath, animated: true, scrollPosition: [])
         }
+        dataSource.refresh()
+
+        return false
     }
 }
 
-extension SearchViewController: UISearchResultsUpdating {
+extension SearchViewController : UISearchBarDelegate {
+   
     
-    func updateSearchResults(for searchController: UISearchController) {
-        let searchBar = searchController.searchBar
-        filterContentForSearchText(searchBar.text!)
-    }
-    
-    func filterContentForSearchText(_ searchText: String ) {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        //return to the original state i.e. full word list
         if isSearchBarEmpty {
             loadWords()
             getSnapshot()
@@ -148,11 +139,12 @@ extension SearchViewController: UISearchResultsUpdating {
         
         //filter words
         allWords = allWords.where {
-            $0.word.contains(searchText.lowercased()) || $0.antonym.contains(searchText.lowercased()) || $0.synonym.contains(searchText.lowercased())
+            $0.word.contains(searchText, options: .caseInsensitive) || $0.antonym.contains(searchText, options: .caseInsensitive) || $0.synonym.contains(searchText, options: .caseInsensitive)
         }
-
         getSnapshot()
-        loadWords()
+        
     }
 }
+
+
 

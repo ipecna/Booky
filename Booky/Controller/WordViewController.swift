@@ -219,7 +219,7 @@ extension WordViewController : UICollectionViewDelegate, UIGestureRecognizerDele
         let itemIndex = index
         let context = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { (action) -> UIMenu? in
             let learned = UIAction(title: "Learned", image: UIImage(systemName: "hands.clap.fill"), identifier: nil, discoverabilityTitle: nil, state: .off) { [weak self] (_) in
-                //TODO: deal with changing the learned property of the word
+                //TODO: deal with changing the isLearned property of the word
                 guard let word = self?.dataSource.itemIdentifier(for: itemIndex) else { fatalError("unable to retrieve word from index path") }
                 do {
                     try self?.realm.write({
