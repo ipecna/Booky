@@ -16,6 +16,12 @@
 		E72C771C27121D2E0094AC11 /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72C771B27121D2E0094AC11 /* WordCell.swift */; };
 		E72C771E2712207D0094AC11 /* PromptView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E72C771D2712207D0094AC11 /* PromptView.xib */; };
 		E72C77BB2726BE710094AC11 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72C77BA2726BE710094AC11 /* Extensions.swift */; };
+		E7764084289EF24200F8409C /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7764083289EF24200F8409C /* Game.swift */; };
+		E7764086289EF3F400F8409C /* GameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7764085289EF3F400F8409C /* GameCell.swift */; };
+		E776408A289FE32800F8409C /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7764089289FE32800F8409C /* MatchViewController.swift */; };
+		E776408C289FE33600F8409C /* MismatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E776408B289FE33600F8409C /* MismatchViewController.swift */; };
+		E776408E289FE34900F8409C /* FillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E776408D289FE34900F8409C /* FillViewController.swift */; };
+		E7764090289FE35400F8409C /* GuessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E776408F289FE35400F8409C /* GuessViewController.swift */; };
 		E791D4EE2754F43A004E0548 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E791D4ED2754F43A004E0548 /* GameViewController.swift */; };
 		E791D4F02756A26E004E0548 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E791D4EF2756A26E004E0548 /* TabBarController.swift */; };
 		E7C0352D26EB4A1D00B136F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0352C26EB4A1D00B136F0 /* AppDelegate.swift */; };
@@ -55,6 +61,12 @@
 		E72C771B27121D2E0094AC11 /* WordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCell.swift; sourceTree = "<group>"; };
 		E72C771D2712207D0094AC11 /* PromptView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromptView.xib; sourceTree = "<group>"; };
 		E72C77BA2726BE710094AC11 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E7764083289EF24200F8409C /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		E7764085289EF3F400F8409C /* GameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCell.swift; sourceTree = "<group>"; };
+		E7764089289FE32800F8409C /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
+		E776408B289FE33600F8409C /* MismatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MismatchViewController.swift; sourceTree = "<group>"; };
+		E776408D289FE34900F8409C /* FillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillViewController.swift; sourceTree = "<group>"; };
+		E776408F289FE35400F8409C /* GuessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessViewController.swift; sourceTree = "<group>"; };
 		E791D4ED2754F43A004E0548 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		E791D4EF2756A26E004E0548 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		E7C0352926EB4A1D00B136F0 /* Booky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Booky.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +114,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E7764091289FE35C00F8409C /* GamesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E7764089289FE32800F8409C /* MatchViewController.swift */,
+				E776408B289FE33600F8409C /* MismatchViewController.swift */,
+				E776408D289FE34900F8409C /* FillViewController.swift */,
+				E776408F289FE35400F8409C /* GuessViewController.swift */,
+			);
+			path = GamesViewController;
+			sourceTree = "<group>";
+		};
 		E7C0352026EB4A1C00B136F0 = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +188,7 @@
 				E708038D27307A3D004C422F /* SearchViewController.swift */,
 				E791D4ED2754F43A004E0548 /* GameViewController.swift */,
 				E791D4EF2756A26E004E0548 /* TabBarController.swift */,
+				E7764091289FE35C00F8409C /* GamesViewController */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -176,6 +200,7 @@
 				E72C771D2712207D0094AC11 /* PromptView.xib */,
 				E72C771B27121D2E0094AC11 /* WordCell.swift */,
 				E7C0353226EB4A1D00B136F0 /* Main.storyboard */,
+				E7764085289EF3F400F8409C /* GameCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -185,6 +210,7 @@
 			children = (
 				E70D3C0F26F27CE300A981B5 /* Book.swift */,
 				E70D3C1126F27CEF00A981B5 /* Word.swift */,
+				E7764083289EF24200F8409C /* Game.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -376,15 +402,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E776408A289FE32800F8409C /* MatchViewController.swift in Sources */,
 				E7C0356326EB4C6F00B136F0 /* Constants.swift in Sources */,
 				E791D4F02756A26E004E0548 /* TabBarController.swift in Sources */,
 				E70D3C1226F27CEF00A981B5 /* Word.swift in Sources */,
 				E7C0356626EB4E5700B136F0 /* WordViewController.swift in Sources */,
+				E776408E289FE34900F8409C /* FillViewController.swift in Sources */,
 				E70D3C1926F335FC00A981B5 /* PromptView.swift in Sources */,
+				E7764086289EF3F400F8409C /* GameCell.swift in Sources */,
 				E791D4EE2754F43A004E0548 /* GameViewController.swift in Sources */,
+				E776408C289FE33600F8409C /* MismatchViewController.swift in Sources */,
 				E70D3C1026F27CE300A981B5 /* Book.swift in Sources */,
 				E7C0353126EB4A1D00B136F0 /* BookViewController.swift in Sources */,
 				E708038E27307A3D004C422F /* SearchViewController.swift in Sources */,
+				E7764084289EF24200F8409C /* Game.swift in Sources */,
+				E7764090289FE35400F8409C /* GuessViewController.swift in Sources */,
 				E7C0352D26EB4A1D00B136F0 /* AppDelegate.swift in Sources */,
 				E72C771C27121D2E0094AC11 /* WordCell.swift in Sources */,
 				E7C0352F26EB4A1D00B136F0 /* SceneDelegate.swift in Sources */,

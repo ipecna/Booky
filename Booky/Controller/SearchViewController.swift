@@ -70,6 +70,7 @@ class SearchViewController: UIViewController {
         searchBar.delegate = self
         view.addSubview(searchBar)
         searchBar.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
         collectionView = UICollectionView(frame: CGRect(x: 0,
                                                         y: searchBar.frame.maxY,
                                                         width: view.bounds.width,

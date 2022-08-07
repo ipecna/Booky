@@ -12,6 +12,7 @@ struct K {
     
     static let segueIdentifier = "goToWords"
     static let wordCellIdentifier = "WordCell"
+    static let gameCellIdentifier = "GameCell"
     static let bookCellIdentifier = "bookCell"
     static let title = "Booky"
     static let titleTag = 100

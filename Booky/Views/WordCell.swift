@@ -106,7 +106,6 @@ class WordCell: UICollectionViewCell {
         contentView.backgroundColor = UIColor(named: "Foreground")
 
         contentView.addSubview(rootStack)
-        //contentView.translatesAutoresizingMaskIntoConstraints = false
         rootStack.translatesAutoresizingMaskIntoConstraints = false
         
         setUpConstraints()

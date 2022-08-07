@@ -17,6 +17,7 @@ class WordViewController: UIViewController, WordCellDelegate, UIViewControllerTr
     }
     
     var wordArray: Results<Word>?
+    var results = [Word]()
     let realm = try! Realm()
     var collectionView: UICollectionView!
     var promptView = PromptView()
@@ -47,6 +48,7 @@ class WordViewController: UIViewController, WordCellDelegate, UIViewControllerTr
     //MARK: - Loading Words
     func loadWords() {
         wordArray = selectedBook?.words.sorted(byKeyPath: "word", ascending: true)
+        print("Load Words word array:", wordArray)
     }
     
     //MARK: - Prompt View Delegate
@@ -105,12 +107,15 @@ class WordViewController: UIViewController, WordCellDelegate, UIViewControllerTr
         if let word = wordArray?[index.item] {
             do {
                 try realm.write({
-                    realm.delete(word)
+                    selectedBook?.words.remove(at: index.item)
+                    //realm.delete(word)
+                    
                 })
             } catch {
                 fatalError("Failed to delete cell")
             }
         }
+        
         getSnapshot()
     }
     
@@ -170,13 +175,15 @@ class WordViewController: UIViewController, WordCellDelegate, UIViewControllerTr
     func getSnapshot() {
         var snapshot = NSDiffableDataSourceSnapshot<Section, Word>()
         snapshot.appendSections([.main])
+        
         loadWords()
         guard let results = wordArray?.toArray() else { return }
+        
+        debugPrint("get snapshot, results:", results )
         snapshot.appendItems(results, toSection: .main)
         
         dataSource.apply(snapshot, animatingDifferences: false)
     }
-    
 }
 
 //MARK: - Handling Selection
@@ -230,9 +237,9 @@ extension WordViewController : UICollectionViewDelegate, UIGestureRecognizerDele
                 }
             }
             let delete = UIAction(title: "Delete", image: UIImage(systemName: "trash"), identifier: nil, discoverabilityTitle: nil, attributes: .destructive, state: .off) { [weak self] _ in
-                DispatchQueue.main.async {
-                    self?.deleteCell(itemIndex)
-                }
+               
+                self?.deleteCell(itemIndex)
+                
             }
             let edit = UIAction(title: "Edit", image: UIImage(systemName: "rectangle.and.pencil.and.ellipsis"), identifier: nil, discoverabilityTitle: nil, state: .off) { [weak self] (action) in
                 //TODO: deal with editing items
